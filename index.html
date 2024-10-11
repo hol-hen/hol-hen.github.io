@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/style.css" />
+  </head>
+
+  <body>
+    <h1>GPN Meme Exchange</h1>
+    <main>
+      <form id="login" onsubmit="login(event)" target="">
+        <label for="username">Username:</label>
+        <input id="username" type="text" placeholder="Username">
+        <br>
+        <label for="pw">Password:</label>
+        <input id="pw" type="password">
+        <br>
+        <button type="submit">Login</button>
+      </form>
+      <p id="invalid" hidden>Invalid username or password.</p>
+    </main>
+  </body>
+
+  <script>
+    users = {
+      'michael': 'thunder',
+      'christopher': 'soccer',
+      'jessica': 'abc123',
+      'matthew': 'pass',
+      'ashley': 'charlie',
+      'jennifer': 'qazwsx',
+      'joshua': 'hunter',
+      'amanda': 'ginger',
+      'daniel': 'password',
+      'david': '12345',
+      'james': '1234',
+      'robert': 'ashley',
+      'john': '123456789',
+      'joseph': 'freedom',
+      'andrew': 'monkey',
+      'ryan': 'michael',
+      'brandon': '11111111',
+      'jason': 'qazwsx',
+      'justin': 'qwerty',
+      'sarah': 'starwars',
+      'william': '159753',
+      'amber': 'password',
+      'shenequa': 'chelsea',
+      'oscar': 'football',
+      'ayme': 'charlie',
+      'maly': 'letmein',
+      'sutton': '1234567890',
+      'wilfredo': 'thomas',
+      'jordanne': 'password',
+      'chidi': 'qwertyuiop',
+      'jeorge': '121212',
+      'shani': 'jessica',
+      'doonab1123': 'Rottnest',
+      'booklover98': 'EmmyFurBaby123'
+    }
+    
+    memes = {
+      'michael': 'meme1.png',
+      'christopher': 'meme2.png',
+      'jessica': 'meme3.png',
+      'matthew': 'meme4.png',
+      'ashley': 'meme5.png',
+      'jennifer': 'meme6.png',
+      'joshua': 'meme7.png',
+      'amanda': 'meme8.png',
+      'daniel': 'meme9.png',
+      'david': 'meme10.png',
+      'james': 'meme11.png',
+      'robert': 'meme12.png',
+      'john': 'meme13.png',
+      'joseph': 'meme14.png',
+      'andrew': 'meme15.png',
+      'ryan': 'meme16.png',
+      'brandon': 'meme17.png',
+      'jason': 'meme18.png',
+      'justin': 'meme19.png',
+      'sarah': 'meme20.png',
+      'william': 'meme21.png',
+      'amber': 'meme22.png',
+      'shenequa': 'meme23.png',
+      'oscar': 'meme24.png',
+      'ayme': 'meme25.png',
+      'maly': 'meme26.png',
+      'sutton': 'meme27.png',
+      'wilfredo': 'meme28.png',
+      'jordanne': 'meme29.png',
+      'chidi': 'meme30.png',
+      'jeorge': 'meme31.png',
+      'shani': 'meme32.png',
+      'doonab1123': 'donna.jpg',
+      'skiqueen98': 'bella.jpg'
+    }
+
+    const form = document.getElementById('login');
+    const invalid = document.getElementById('invalid');
+
+    function login(event) {
+  
+      let username = event.target[0].value
+      let password = event.target[1].value
+
+      if (users[username.toLowerCase()] && users[username.toLowerCase()] == password) {
+        invalid.setAttribute('hidden', '');
+        location.href = 'meme.html?username=' + username + '&memePath=' + memes[username.toLowerCase()]
+      } else {
+        invalid.removeAttribute('hidden');
+      }
+
+      event.preventDefault()
+    }
+  </script>
+
+</html>
