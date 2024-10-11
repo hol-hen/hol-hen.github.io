@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html lang="en-US">
-  <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="static/style.css" />
-  </head>
 
-  <body>
-    <h1>GPN Meme Exchange</h1>
-    <main>
-      <div id="heading">
-        <h2 id="welcome">Welcome, </h2>
-        <button id="logout" onclick="window.location='index.html';">Logout</button>
-      </div>
-      <img id="meme" src="static/images/meme1.png" alt="">
-    </main>
-  </body>
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static/style.css" />
+</head>
 
-  <script>
-    const welcome = document.getElementById('welcome');
-    const meme = document.getElementById('meme');
+<body>
+  <h1>GPN Meme Exchange</h1>
+  <main>
+    <div id="heading">
+      <h2 id="welcome">Welcome, </h2>
+      <button id="logout" onclick="window.location='index.html';">Logout</button>
+    </div>
 
-    const urlParams = new URLSearchParams(window.location.search);
+    <h3>Your Recent Memes</h3>
+    <p>State Library of Victoria, <strong>6 minutes ago</strong></p>
+    <img id="meme" src="static/images/meme1.jpg" alt="">
+  </main>
+</body>
 
-    welcome.innerHTML = welcome.innerHTML += urlParams.get('username')
-    meme.src = 'static/images/' + urlParams.get('memePath')
-  </script>
+<script>
+  const welcome = document.getElementById('welcome');
+  const meme = document.getElementById('meme');
+
+  const urlParams = new URLSearchParams(window.location.search);
+
+  welcome.innerHTML = welcome.innerHTML += urlParams.get('username')
+</script>
 
 </html>
